@@ -1,0 +1,17 @@
+Unhandled error for request POST /api/org.ibm.disaster.fund.addAid: ValidationError: The `org_ibm_disaster_fund_addAid` instance is not valid. Details: `owner` can't be blank (value: undefined); `aidTYPE` can't be blank (value: undefined); `AidCategory` can't be blank (value: undefined); `balance` can't be blank (value: undefined).
+    at /home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/dao.js:400:12
+    at org_ibm_disaster_fund_addAid.<anonymous> (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/validations.js:578:11)
+    at org_ibm_disaster_fund_addAid.next (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/hooks.js:93:12)
+    at org_ibm_disaster_fund_addAid.<anonymous> (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/validations.js:575:23)
+    at org_ibm_disaster_fund_addAid.trigger (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/hooks.js:83:12)
+    at org_ibm_disaster_fund_addAid.Validatable.isValid (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/validations.js:541:8)
+    at /home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/dao.js:396:9
+    at doNotify (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at doNotify (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at doNotify (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at doNotify (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at Function.ObserverMixin._notifyBaseObservers (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:178:5)
+    at Function.ObserverMixin.notifyObserversOf (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:153:8)
+    at Function.ObserverMixin._notifyBaseObservers (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:176:15)
+    at Function.ObserverMixin.notifyObserversOf (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:153:8)
+    at Function.ObserverMixin._notifyBaseObservers (/home/blockchain/.npm/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:176:15)

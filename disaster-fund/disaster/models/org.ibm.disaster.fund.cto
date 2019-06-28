@@ -1,0 +1,83 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Write your model definitions here
+ */
+
+namespace org.ibm.disaster.fund
+
+enum IDtype {
+  o TANnumber
+  o PANnumber
+}
+
+enum Aidtype {
+  o Cash
+  o food
+  o Medical
+  o cloth
+}
+
+concept ContactAddress {
+  o String city
+  o String state
+  o String zipCode
+  o String country
+  o String phoneNumber
+  o String emailAddress
+}
+
+participant Ngo identified by ngoID {     //AID Receiver
+  o String ngoID
+  o String ReceiverNgoName
+  o IDtype IDtype default="TANnumber"
+  o String IdNumber
+  o ContactAddress contactAddress
+}
+
+asset Aid identified by AidID {
+  o String AidID
+  o String AidCategory
+  o Double balance
+  o String accountReference optional
+  o Aidtype aidTYPE
+   --> Ngo owner
+}
+
+transaction addNgo {
+  o String NgoName
+  o String IdNumber
+  o IDtype IDtype
+  o String city
+  o String state
+  o String zipCode
+  o String country
+  o String phoneNumber
+  o String emailAddress
+}
+
+transaction addAid {
+  -->Ngo owner
+  o Aidtype aidTYPE
+  o String AidCategory
+  o String accountReference optional
+  o Double balance 
+}
+
+transaction SampleTransaction {
+  --> Aid fromaccnt
+  --> Aid toaccnt
+  o Double amount
+}

@@ -1,0 +1,61 @@
+
+Profiles:
+
+    ComposerOrdererGenesis:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+        Consortiums:
+            ComposerConsortium:
+                Organizations:
+                    - *Org1
+    ComposerChannel:
+        Consortium: ComposerConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+
+Organizations:
+
+    - &OrdererOrg
+
+        Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/platform-configuration.com/msp
+        AdminPrincipal: Role.MEMBER
+
+    - &Org1
+        Name: Org1
+        ID: Org1MSP
+
+        MSPDir: crypto-config/peerOrganizations/ibm.platform-configuration.com/msp
+
+        AdminPrincipal: Role.MEMBER
+
+        AnchorPeers:
+            - Host: peer0.ibm.platform-configuration.com
+              Port: 7051
+
+Orderer: &OrdererDefaults
+    OrdererType: solo
+
+    Addresses:
+        - orderer.platform-configuration.com:7050
+
+    BatchTimeout: 2s
+    BatchSize:
+        MaxMessageCount: 10
+
+        AbsoluteMaxBytes: 98 MB
+        PreferredMaxBytes: 512 KB
+
+    Kafka:
+        Brokers:
+            - 127.0.0.1:9092
+    Organizations:
+
+Application: &ApplicationDefaults
+
+    Organizations:

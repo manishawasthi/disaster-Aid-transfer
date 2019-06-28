@@ -1,0 +1,16 @@
+
+OrdererOrgs:
+
+  - Name: Orderer
+    Domain: platform-configuration.com
+
+    Specs:
+      - Hostname: orderer
+PeerOrgs:
+  - Name: Org1
+    Domain: ibm.platform-configuration.com
+
+    Template:
+      Count: 1
+    Users:
+      Count: 0

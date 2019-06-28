@@ -1,0 +1,56 @@
+{
+    "name": "platform-configuration",
+    "x-type": "hlfv1",
+    "x-commitTimeout": 300,
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300",
+                    "eventHub": "300",
+                    "eventReg": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "composerchannel": {
+            "orderers": [
+                "orderer.platform-configuration.com"
+            ],
+            "peers": {
+                "peer0.ibm.platform-configuration.com": {}
+            }
+        }
+    },
+    "organizations": {
+        "Org1": {
+            "mspid": "Org1MSP",
+            "peers": [
+                "peer0.ibm.platform-configuration.com"
+            ],
+            "certificateAuthorities": [
+                "ca.ibm.platform-configuration.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.platform-configuration.com": {
+            "url": "grpc://localhost:7050"
+        }
+    },
+    "peers": {
+        "peer0.ibm.platform-configuration.com": {
+            "url": "grpc://localhost:7051"
+        }
+    },
+    "certificateAuthorities": {
+        "ca.ibm.platform-configuration.com": {
+            "url": "http://localhost:7054",
+            "caName": "ca.ibm.platform-configuration.com"
+        }
+    }
+}
