@@ -1,0 +1,2 @@
+nohup: ignoring input
+[HPM] Error occurred while trying to proxy request /api/org.ibm.disaster.fund.addNgo from 122.176.120.160:6002 to http://localhost:3000 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)

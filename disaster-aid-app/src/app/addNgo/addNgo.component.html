@@ -1,0 +1,224 @@
+<!--
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="modal fade" id="addTransactionModal" tabindex="-1" role="dialog" aria-labelledby="addTransactionModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addTransactionModalLabel">Create Transaction</h4>
+        <p class="modal-intro">Enter the required values below.</p>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+
+          
+
+            
+              <div class="form-group text-left">
+                <label for="NgoName">NgoName</label>
+                
+                  <input formControlName="NgoName" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="IdNumber">IdNumber</label>
+                
+                  <input formControlName="IdNumber" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <label for="IDtype">IDtype</label>
+              <div class="checkbox">
+                
+                  <label>
+                    <input
+                      
+                        formControlName="IDtype"
+                      
+                      name="IDtype"
+                      value="TANnumber"
+                      type="radio"
+                      
+                    />
+                    TANnumber
+                  </label>
+                
+                  <label>
+                    <input
+                      
+                        formControlName="IDtype"
+                      
+                      name="IDtype"
+                      value="PANnumber"
+                      type="radio"
+                      
+                    />
+                    PANnumber
+                  </label>
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="city">city</label>
+                
+                  <input formControlName="city" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="state">state</label>
+                
+                  <input formControlName="state" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="zipCode">zipCode</label>
+                
+                  <input formControlName="zipCode" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="country">country</label>
+                
+                  <input formControlName="country" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="phoneNumber">phoneNumber</label>
+                
+                  <input formControlName="phoneNumber" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="emailAddress">emailAddress</label>
+                
+                  <input formControlName="emailAddress" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+          
+
+            
+          
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button (click)="addTransaction(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container col-md-6">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        <strong>Error:</strong> {{errorMessage}}
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+        <h1 class="transaction-title" id='transactionName'>addNgo</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          When invoked, this transaction will have the following attributes:
+          <br>
+          <ul>
+            
+              
+                <li><span class="attribute"><b>NgoName</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>IdNumber</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>IDtype</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>city</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>state</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>zipCode</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>country</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>phoneNumber</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>emailAddress</b></span></li>
+              
+            
+              
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <button (click)="resetForm();" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransactionModal">Invoke</button>
+    </div>
+  </div>
+</div>
+
